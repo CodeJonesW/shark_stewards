@@ -1,3 +1,5 @@
+
+/* ---------------------  APP */
 .App {
     display: flex;
     justify-content: center;
@@ -5,6 +7,50 @@
     flex-direction: column;
 }
 
-.button1 {
+/* ---------------------  HOME PAGE */
 
+#homeContainer {
+    background-image: url('./assets/images/shark.jpg');
+    min-height: 100vh;
+    min-width: 100vw;  
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
+
+.homeLink{
+    width: 70%;
+}
+
+#startOptions {
+    min-height: 100vh;
+    min-width: 100vw;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button1 {
+    border-radius: 10px;
+    background-color: dimgrey;
+    border-color: white;
+    color: white;
+    margin: 3%;
+    width: 100%;
+    height: 100px;
+}
+
+/* ---------------------  NAVBAR  */
+
+#navBarLogo {
+    width: 30%;
+    height: auto;
+}
+
+#navBarContainer {
+    background-color: rgb(6, 1, 26);
+    min-width: 100%;
+    height: 20%;
+}
+

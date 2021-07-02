@@ -1,11 +1,22 @@
 import React from "react";
-import './pages.css'
+import { Link } from "react-router-dom"
 const Home = () => {
     return(
-        <div class="optionForm">
-            <button>Report A Sighting</button>
-            <button>Test Your Knowledge</button>
-            <button>Placeholder</button>
+        <div id="homeContainer">
+            <div id="startOptions">
+            <Link className="homeLink" to="/sighting">
+                <button className="button1">Report A Sighting</button>
+            </Link>
+            <Link className="homeLink" to="/">
+                <button className="button1">Test Your Knowledge</button>
+            </Link>
+            <Link className="homeLink" to="/">
+                <button className="button1">Placeholder</button>
+            </Link>
+                
+         
+                
+            </div>
         </div>
     )
 
