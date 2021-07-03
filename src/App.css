@@ -24,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 .button1 {
@@ -38,6 +38,7 @@
     height: 100px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
 }
+
 
 /* ---------------------  NAVBAR  */
 
@@ -90,4 +91,14 @@
     border-radius: 3%;
     padding: 5%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+}
+
+.submitSightingReport {
+    border-radius: 10px;
+    background-color: rgb(6, 1, 26);
+    border-color: white;
+    color: white;
+    width: 80%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+
 }
