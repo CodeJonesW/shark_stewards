@@ -10,7 +10,7 @@
 /* ---------------------  HOME PAGE */
 
 #homeContainer {
-    background-image: url('./assets/images/shark.jpg');
+    background-image: url('./assets/images/underwater.jpg');
     min-height: 100vh;
     min-width: 100vw;  
     background-size: cover;
@@ -33,12 +33,14 @@
 
 .button1 {
     border-radius: 10px;
-    background-color: dimgrey;
+    background-color: rgb(6, 1, 26);
+    opacity: .9;
     border-color: white;
     color: white;
     margin: 3%;
     width: 100%;
     height: 100px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
 }
 
 /* ---------------------  NAVBAR  */
@@ -54,3 +56,30 @@
     height: 20%;
 }
 
+
+/* ---------------------  REPORT SIGHTING PAGE  */
+#sightingContainer {
+    background-image: url('./assets/images/underwater.jpg');
+    min-height: 100vh;
+    min-width: 100vw;  
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sightingForm {
+    color: white;
+    background-color: rgb(6, 1, 26);
+    opacity: .9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3%;
+    padding: 5%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+}
