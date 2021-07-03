@@ -10,7 +10,7 @@ const Sighting = () => {
                 <input type="text" id="sightingLocation" name="sightingLocation"></input><br></br>
                 <label htmlFor="email">Email (Optional): </label><br></br>
                 <input type="text" id="email" name="email"></input><br></br>
-                <label htmlFor="signUpForEmail">Join SharkStewards Newsletter</label>
+                <label htmlFor="signUpForEmail">Join SS Newsletter</label>
                 <input type="checkbox" id="sightingLocation" name="sightingLocation"></input><br></br>
                 <div>
                     <input type="submit" value="Submit" />

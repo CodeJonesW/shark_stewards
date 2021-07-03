@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home.js'
 import Sighting from './pages/Sighting.js'
 import Navbar from './components/Navbar.js'
+import Footer from './components/Footer.js'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route exact path="/sighting" component={Sighting} />
             <Route render={() => <h1 className="display-2"> This page does not exist.</h1>} />
           </Switch>
+          <Footer />
         </>
       </Router>
     </div>

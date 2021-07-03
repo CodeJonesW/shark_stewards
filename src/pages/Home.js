@@ -13,9 +13,6 @@ const Home = () => {
             <Link className="homeLink" to="/">
                 <button className="button1">Placeholder</button>
             </Link>
-                
-         
-                
             </div>
         </div>
     )
