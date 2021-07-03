@@ -11,7 +11,7 @@ const Home = () => {
                 <button className="button1">Test Your Knowledge</button>
             </Link>
             <Link className="homeLink" to="/">
-                <button className="button1">Placeholder</button>
+                <button className="button1"> #sharkstewards</button>
             </Link>
             </div>
         </div>
