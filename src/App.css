@@ -59,6 +59,12 @@
     height: auto;
 }
 
+#footerLogo2 {
+    width: 40%;
+    height: auto;
+    margin-left: 20%;
+}
+
 #footerContainer {
     background-color: rgb(6, 1, 26);
     min-width: 100%;
