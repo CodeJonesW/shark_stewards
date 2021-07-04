@@ -83,8 +83,8 @@
     background-image: url('./assets/images/underwater.jpg');
     /* min-height: 100vh;
     min-width: 100vw;   */
-    padding-top: 30%;
-    padding-bottom: 29%;
+    padding-top: 40%;
+    padding-bottom: 38%;
     background-size: cover;
     height: 100%;
     overflow: hidden;
@@ -115,5 +115,8 @@
     color: white;
     width: 80%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+}
 
+#sharkTypes{
+    width: 80%
 }
