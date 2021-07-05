@@ -20,11 +20,15 @@ const Sighting = () => {
                 <input className="sightingInput" type="text" id="sightingLocationInput" name="sightingLocation"></input><br></br>
                 <label htmlFor="date">Date * </label><br></br>
                 <input className="sightingInput" type="date" id="dateTimeInput" name="date"></input><br></br>
-
-                <label>Description</label>
-                <textarea id="descriptionInput" ></textarea><br></br>
+                <label>Description *</label>
+                <select name="sightingType" id="sightingTypeInput" form="sightingForm">
+                    <option value="">Select an option</option>
+                    <option value="Death">Death</option>
+                    <option value="Bite">Bite</option>
+                    <option value="Sighting">Sighting</option>
+                    <option value="Other">Other</option>
+                </select><br></br>
                 <input className="submitSightingReport" type="submit" value="Submit" />
-
             </form>
             
         </div>
