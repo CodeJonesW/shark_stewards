@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Form";
+import Form from "./pages/Form";
 import Welcome from "./pages/Welcome.js";
-import Sighting from "./components/Sighting_Form.js";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
 import { Flex, View } from "@adobe/react-spectrum";
@@ -10,11 +9,12 @@ import { Flex, View } from "@adobe/react-spectrum";
 function App() {
     return (
         <Flex direction="column">
-            <Navbar />
+            
             <Router>
+            <Navbar />
                 <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/welcome" component={Welcome} />
+                    <Route exact path="/" component={Welcome} />
+                    <Route exact path="/reportSighting" component={Form} />
                     <Route
                         render={() => (
                             <h1 className="display-2">
@@ -24,8 +24,9 @@ function App() {
                         )}
                     />
                 </Switch>
+                <Footer />
             </Router>
-            <Footer />
+            
         </Flex>
     );
 }
