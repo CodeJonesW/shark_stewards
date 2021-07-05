@@ -81,8 +81,6 @@
 /* ---------------------  REPORT SIGHTING PAGE  */
 #sightingContainer {
     background-image: url('./assets/images/underwater.jpg');
-    /* min-height: 100vh;
-    min-width: 100vw;   */
     background-size: cover;
     height: 100%;
     overflow: hidden;
@@ -90,7 +88,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12%;
+    padding: 13%;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 
 #sightingForm {

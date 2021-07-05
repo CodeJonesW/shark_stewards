@@ -4,7 +4,7 @@ const Sighting = () => {
     return(
         <div id="sightingContainer">
             <form name="sightingForm" id="sightingForm">
-            <h1>Report a Shark Sighting</h1><br></br>
+            <h2>Report a California Shark Sighting</h2><br></br>
                 <label htmlFor="sharkType">Shark Type * </label><br></br>
                 <select name="sharkTypes" id="sharkTypesInput" form="sightingForm">
                     <option value="">Please select a type</option>
@@ -23,9 +23,9 @@ const Sighting = () => {
                 <label>Description *</label>
                 <select name="sightingType" id="sightingTypeInput" form="sightingForm">
                     <option value="">Select an option</option>
+                    <option value="Sighting">Sighting</option>
                     <option value="Death">Death</option>
                     <option value="Bite">Bite</option>
-                    <option value="Sighting">Sighting</option>
                     <option value="Other">Other</option>
                 </select><br></br>
                 <input className="submitSightingReport" type="submit" value="Submit" />
