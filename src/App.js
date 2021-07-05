@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Form";
+import Welcome from "./pages/Welcome.js";
 import Sighting from "./components/Sighting_Form.js";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
@@ -13,7 +14,7 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/sighting" component={Sighting} />
+                    <Route exact path="/welcome" component={Welcome} />
                     <Route
                         render={() => (
                             <h1 className="display-2">

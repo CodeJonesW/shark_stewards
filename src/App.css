@@ -44,5 +44,7 @@
     height: 20%;
 }
 
-/* ---------------------  REPORT SIGHTING PAGE  */
-
+/* ---------------------  Welcome PAGE  */
+#image1 {
+    border-radius: 50%;
+}
