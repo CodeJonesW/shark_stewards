@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home.js";
+import Home from "./pages/Form";
 import Sighting from "./components/Sighting_Form.js";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";

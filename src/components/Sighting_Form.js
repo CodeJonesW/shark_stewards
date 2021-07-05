@@ -1,40 +1,9 @@
 import React from "react";
 import { Form, TextField, Checkbox, Button } from "@adobe/react-spectrum";
 
-const Sighting = () => {
+const SightingForm = () => {
     return (
-        // <div id="sightingContainer">
         <Form maxWidth="size-3600" flex="1 0 auto">
-            {/* <form id="sightingForm">
-                <label htmlFor="sharkType">Shark Type: </label>
-                <br></br>
-                <input type="text" id="sharkType" name="sharkType"></input>
-                <br></br>
-                <label htmlFor="sightingLocation">Location: </label>
-                <br></br>
-                <input
-                    type="text"
-                    id="sightingLocation"
-                    name="sightingLocation"
-                ></input>
-                <br></br>
-                <label htmlFor="email">Email (Optional): </label>
-                <br></br>
-                <input type="text" id="email" name="email"></input>
-                <br></br>
-                <label htmlFor="signUpForEmail">Join SS Newsletter</label>
-                <input
-                    type="checkbox"
-                    id="sightingLocation"
-                    name="sightingLocation"
-                ></input>
-                <br></br>
-                <input
-                    className="submitSightingReport"
-                    type="submit"
-                    value="Submit"
-                />
-            </form> */}
             <TextField
                 label="Shark Type"
                 placeholder="abc@adobe.com"
@@ -47,8 +16,7 @@ const Sighting = () => {
                 Submit
             </Button>
         </Form>
-        // </div>
     );
 };
 
-export default Sighting;
+export default SightingForm;

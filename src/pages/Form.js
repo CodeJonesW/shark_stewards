@@ -4,19 +4,6 @@ import { Flex, View, Heading } from "@adobe/react-spectrum";
 import Sighting from "../components/Sighting_Form";
 const Home = () => {
     return (
-        // <div id="homeContainer">
-        //     <div id="startOptions">
-        //     <Link className="homeLink" to="/sighting">
-        //         <button className="button1">Report A Sighting</button>
-        //     </Link>
-        //     <Link className="homeLink" to="/">
-        //         <button className="button1">Test Your Knowledge</button>
-        //     </Link>
-        //     <Link className="homeLink" to="/">
-        //         <button className="button1"> #sharkstewards</button>
-        //     </Link>
-        //     </div>
-        // </div>
         <View
             paddingBottom="size-400"
             paddingTop="size-400"
