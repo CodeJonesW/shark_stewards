@@ -21,10 +21,10 @@ const Welcome = () => {
             height="size-6000"
             gap="size-100">
             <View gridArea="header" >
-                <Heading level={3}>Protect Yourself, Sharks, and our Ocean.</Heading>
+                <Heading level={1}>Protect Yourself, Sharks, and our Ocean.</Heading>
             </View>
             <View  gridArea="sidebar" >
-                <Heading level={4}>Try our Free Shark Education for Californians!</Heading>
+                <Heading level={3}>Try our Free Shark Education for California Residents!</Heading>
             </View>
             <View  gridArea="content">
             <Flex width="100%" height="auto" maxHeight="350px">
@@ -43,10 +43,10 @@ const Welcome = () => {
             >
                 <ButtonGroup>
                     <Link to="/">
-                        <Button margin="4%" height="40%" variant="primary">Learn about Local Sharks</Button>
+                        <Button variant="cta" margin="6%" height="60%" width="auto" >Learn about Local Sharks</Button>
                     </Link>
                     <Link to="/reportSighting">
-                        <Button margin="4%" height="40%" variant="primary">Report a Shark Sighting</Button>
+                        <Button margin="6%" height="60%" width="auto" variant="cta">Report a Shark Sighting</Button>
                     </Link>
                     
                 </ButtonGroup>
