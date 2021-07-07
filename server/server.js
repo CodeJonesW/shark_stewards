@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/api', apiRoutes);
 
-// Start the server on the port
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);
     sequelize.sync({ force: false });
