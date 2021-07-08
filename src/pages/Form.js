@@ -121,7 +121,7 @@ const SharkPicker = () => {
                 <Item key="seven_gill">Sevengill Shark</Item>
                 <Item key="soup_fin">Soupfin (Tope or School) Shark</Item>
                 <Item key="six_gill">Sixgill Shark</Item>
-                <Item key="salmon">Salmon Shark</Item> */}
+                <Item key="salmon">Salmon Shark</Item>
                 {/* <Item key="none">None of the above</Item> */}
             </Picker>
             {SharkImageCarousel(sharks[shark_index], left, right)}
