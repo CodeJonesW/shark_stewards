@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return (
         <div id="navBarContainer">
-            {/* <Link to="/"> */}
+            <Link to="/">
             <img id="navBarLogo" src={logo} alt="sharkStewardLogo"></img>
-            {/* </Link> */}
+            </Link>
         </div>
     );
 };
