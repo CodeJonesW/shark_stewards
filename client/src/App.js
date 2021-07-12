@@ -13,7 +13,7 @@ function App() {
                 <Navbar />
                     <Switch>
                         <Route exact path="/" component={Welcome} />
-                        <Route exact path="/sighting" component={Form} />
+                        <Route exact path="/reportSighting" component={Form} />
                         <Route
                             render={() => (
                                 <h1 className="display-2">
