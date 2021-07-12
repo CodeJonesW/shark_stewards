@@ -9,22 +9,23 @@ import { Flex, View } from "@adobe/react-spectrum";
 function App() {
     return (
         <Flex direction="column">
-            <Navbar />
             <Router>
-                <Switch>
-                    <Route exact path="/" component={Welcome} />
-                    <Route exact path="/sighting" component={Form} />
-                    <Route
-                        render={() => (
-                            <h1 className="display-2">
-                                {" "}
-                                This page does not exist.
-                            </h1>
-                        )}
-                    />
-                </Switch>
+                <Navbar />
+                    <Switch>
+                        <Route exact path="/" component={Welcome} />
+                        <Route exact path="/sighting" component={Form} />
+                        <Route
+                            render={() => (
+                                <h1 className="display-2">
+                                    {" "}
+                                    This page does not exist.
+                                </h1>
+                            )}
+                        />
+                    </Switch>
+                <Footer />
             </Router>
-            <Footer />
+
         </Flex>
     );
 }
