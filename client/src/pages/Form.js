@@ -17,7 +17,7 @@ import hammerhead from "../assets/images/sharks/hammerhead.jpeg";
 import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
 import ChevronRight from "@spectrum-icons/workflow/ChevronRight";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 const sharks = [
     "great_white",
@@ -30,7 +30,7 @@ const sharks = [
 ];
 
 const SharkImage = (shark_id) => {
-    console.log(shark_id);
+    // console.log(shark_id);
     switch (shark_id) {
         case "great_white":
             return (
@@ -129,7 +129,42 @@ const SharkPicker = () => {
     );
 };
 
+
+
 const SightingForm = () => {
+
+    // useEffect(() => {
+    //     if ("geolocation" in navigator) {
+    //             navigator.geolocation.getCurrentPosition(function(position) {
+    //                 console.log("Latitude is :", position.coords.latitude);
+    //                 console.log("Longitude is :", position.coords.longitude);
+    //               });
+
+    //       } else {
+    //         console.log("Not Available");
+    //       }
+    // }, [])
+
+    const [userCurrentLocation, setUserCurrentLocation] = useState(false)
+
+    const handleUseCurrentLocation = () => {
+        if ("geolocation" in navigator) {
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+            console.log("Latitude is :", position.coords.latitude);
+            console.log("Longitude is :", position.coords.longitude);
+
+            setUserCurrentLocation({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+            })
+
+            });
+        } else {
+        console.log("Not Available");
+        }
+    }
+
     return (
         <View
             paddingBottom="size-400"
@@ -141,12 +176,14 @@ const SightingForm = () => {
         >
          <Form maxWidth="size-3600">
                 <Heading level={3}>Report a shark sighting</Heading>
-
                 <TextField
                     label="Location"
-                    placeholder="San Francisco Bay"
+                    value={userCurrentLocation.latitude ? userCurrentLocation.latitude + " " + userCurrentLocation.longitude : "San Francisco"}
                     isRequired
                 />
+                
+
+                <Checkbox onChange={handleUseCurrentLocation}>Use Current Location</Checkbox>
                 <TextField label="Time of day (PST)" placeholder="9:00 AM" />
                 <TextField
                     label="Email"
