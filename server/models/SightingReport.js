@@ -6,7 +6,11 @@ class SightingReport extends Model {}
 SightingReport.init(
   {
     sharkType: DataTypes.STRING,
-    Date: DataTypes.DATE
+    submissionDate: DataTypes.DATE,
+    timeOfSighting: DataTypes.STRING,
+    email: DataTypes.STRING,
+    location: DataTypes.STRING,
+    subscribe: DataTypes.BOOLEAN,
   },
   {
     sequelize,

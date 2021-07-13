@@ -17,7 +17,9 @@ import hammerhead from "../assets/images/sharks/hammerhead.jpeg";
 import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
 import ChevronRight from "@spectrum-icons/workflow/ChevronRight";
 
-import React from "react";
+import { useHistory } from 'react-router-dom'
+import API from "../utils/api/api.js"
+import React, {useEffect, useState} from "react";
 
 const sharks = [
     "great_white",
@@ -30,7 +32,7 @@ const sharks = [
 ];
 
 const SharkImage = (shark_id) => {
-    console.log(shark_id);
+    // console.log(shark_id);
     switch (shark_id) {
         case "great_white":
             return (
@@ -129,7 +131,74 @@ const SharkPicker = () => {
     );
 };
 
+
+
 const SightingForm = () => {
+    const history = useHistory();
+
+    // when page loads set current location to placeholder since form and state are controlled
+    useEffect(() => {
+        setUserCurrentLocation({location: ""})
+    }, [])
+    // hold user location
+    const [userCurrentLocation, setUserCurrentLocation] = useState(false)
+
+    const handleUseCurrentLocation = () => {
+        // if the checkbox has already been checked clear input
+        if(userCurrentLocation.latitude) {
+            setUserCurrentLocation({
+                location: ""
+            }) 
+        } else {
+            // otherwise get location from geolocation api
+            if ("geolocation" in navigator) {
+
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // update current location state
+                    setUserCurrentLocation({
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    })
+        
+                    }, 
+                    function(error) {
+                        console.error("Error Code = " + error.code + " - " + error.message);
+                      }
+                );
+            } else {
+                    console.log("Geolocation Not Available");
+            }
+        }
+       
+    }
+
+    function handleManualChangeLocation(e){
+        console.log(e)
+        setUserCurrentLocation({location: e ? e : ""})
+    }
+
+    const handleSubmitReport = async (e) => {
+        e.preventDefault()
+        // if form is updated make sure these are still valid >>
+        let reportData = {
+            sharkType: e.target.parentElement['6'].outerText,
+            location: e.target.parentElement['0'].value,
+            time: e.target.parentElement['2'].value,
+            email: e.target.parentElement['3'].value,
+            subscribe: e.target.parentElement['9'].ariaChecked,
+        }
+        try {
+            API.postSightingReport(reportData)
+            .then(data => {
+                console.log(data)
+                history.push(`/confirm`);
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     return (
         <View
             paddingBottom="size-400"
@@ -141,12 +210,15 @@ const SightingForm = () => {
         >
          <Form maxWidth="size-3600">
                 <Heading level={3}>Report a shark sighting</Heading>
-
                 <TextField
                     label="Location"
-                    placeholder="San Francisco Bay"
+                    value={userCurrentLocation.latitude ? userCurrentLocation.latitude + " " + userCurrentLocation.longitude : userCurrentLocation.location ? userCurrentLocation.location : "" }
                     isRequired
+                    onChange={(e) => handleManualChangeLocation(e)}
                 />
+                
+
+                <Checkbox onChange={handleUseCurrentLocation}>Use Current Location</Checkbox>
                 <TextField label="Time of day (PST)" placeholder="9:00 AM" />
                 <TextField
                     label="Email"
@@ -157,7 +229,7 @@ const SightingForm = () => {
                 <Divider size="M" />
                 <SharkPicker />
                 <Checkbox>Join the Shark Stewards newsletter</Checkbox>
-                <Button variant="cta" type="submit">
+                <Button onClick={(e) => handleSubmitReport(e)} variant="cta" type="submit">
                     Submit
                 </Button>
             </Form>
