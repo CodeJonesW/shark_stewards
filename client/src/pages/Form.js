@@ -17,6 +17,7 @@ import hammerhead from "../assets/images/sharks/hammerhead.jpeg";
 import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
 import ChevronRight from "@spectrum-icons/workflow/ChevronRight";
 
+import API from "../utils/api/api.js"
 import React, {useEffect, useState} from "react";
 
 const sharks = [
@@ -171,6 +172,29 @@ const SightingForm = () => {
         setUserCurrentLocation({location: e ? e : ""})
     }
 
+    const handleSubmitReport = async (e) => {
+        e.preventDefault()
+        // console.log(e)
+        // console.log(e.target.parentElement)
+        // if form is updated make sure these are still valid >>
+        let reportData = {
+            sharkType: e.target.parentElement['6'].outerText,
+            location: e.target.parentElement['0'].value,
+            time: e.target.parentElement['2'].value,
+            email: e.target.parentElement['3'].value,
+            subscribe: e.target.parentElement['9'].ariaChecked,
+        }
+        try {
+            API.postSightingReport(reportData)
+            .then(data => {
+                console.log(data)
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     return (
         <View
             paddingBottom="size-400"
@@ -201,7 +225,7 @@ const SightingForm = () => {
                 <Divider size="M" />
                 <SharkPicker />
                 <Checkbox>Join the Shark Stewards newsletter</Checkbox>
-                <Button variant="cta" type="submit">
+                <Button onClick={(e) => handleSubmitReport(e)} variant="cta" type="submit">
                     Submit
                 </Button>
             </Form>
