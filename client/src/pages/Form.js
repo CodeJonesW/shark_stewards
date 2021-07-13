@@ -17,6 +17,7 @@ import hammerhead from "../assets/images/sharks/hammerhead.jpeg";
 import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
 import ChevronRight from "@spectrum-icons/workflow/ChevronRight";
 
+import { useHistory } from 'react-router-dom'
 import API from "../utils/api/api.js"
 import React, {useEffect, useState} from "react";
 
@@ -133,23 +134,27 @@ const SharkPicker = () => {
 
 
 const SightingForm = () => {
+    const history = useHistory();
 
+    // when page loads set current location to placeholder since form and state are controlled
     useEffect(() => {
-        setUserCurrentLocation({location: "San Francisco"})
+        setUserCurrentLocation({location: ""})
     }, [])
-
+    // hold user location
     const [userCurrentLocation, setUserCurrentLocation] = useState(false)
 
     const handleUseCurrentLocation = () => {
+        // if the checkbox has already been checked clear input
         if(userCurrentLocation.latitude) {
             setUserCurrentLocation({
                 location: ""
             }) 
         } else {
+            // otherwise get location from geolocation api
             if ("geolocation" in navigator) {
 
                 navigator.geolocation.getCurrentPosition(function(position) {
-        
+                    // update current location state
                     setUserCurrentLocation({
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude
@@ -174,8 +179,6 @@ const SightingForm = () => {
 
     const handleSubmitReport = async (e) => {
         e.preventDefault()
-        // console.log(e)
-        // console.log(e.target.parentElement)
         // if form is updated make sure these are still valid >>
         let reportData = {
             sharkType: e.target.parentElement['6'].outerText,
@@ -188,6 +191,7 @@ const SightingForm = () => {
             API.postSightingReport(reportData)
             .then(data => {
                 console.log(data)
+                history.push(`/confirm`);
             })
         } catch (error) {
             console.log(error)
