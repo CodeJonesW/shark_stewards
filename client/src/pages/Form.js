@@ -133,36 +133,42 @@ const SharkPicker = () => {
 
 const SightingForm = () => {
 
-    // useEffect(() => {
-    //     if ("geolocation" in navigator) {
-    //             navigator.geolocation.getCurrentPosition(function(position) {
-    //                 console.log("Latitude is :", position.coords.latitude);
-    //                 console.log("Longitude is :", position.coords.longitude);
-    //               });
-
-    //       } else {
-    //         console.log("Not Available");
-    //       }
-    // }, [])
+    useEffect(() => {
+        setUserCurrentLocation({location: "San Francisco"})
+    }, [])
 
     const [userCurrentLocation, setUserCurrentLocation] = useState(false)
 
     const handleUseCurrentLocation = () => {
-        if ("geolocation" in navigator) {
-
-        navigator.geolocation.getCurrentPosition(function(position) {
-            console.log("Latitude is :", position.coords.latitude);
-            console.log("Longitude is :", position.coords.longitude);
-
+        if(userCurrentLocation.latitude) {
             setUserCurrentLocation({
-                latitude: position.coords.latitude,
-                longitude: position.coords.longitude
-            })
-
-            });
+                location: ""
+            }) 
         } else {
-        console.log("Not Available");
+            if ("geolocation" in navigator) {
+
+                navigator.geolocation.getCurrentPosition(function(position) {
+        
+                    setUserCurrentLocation({
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    })
+        
+                    }, 
+                    function(error) {
+                        console.error("Error Code = " + error.code + " - " + error.message);
+                      }
+                );
+            } else {
+                    console.log("Geolocation Not Available");
+            }
         }
+       
+    }
+
+    function handleManualChangeLocation(e){
+        console.log(e)
+        setUserCurrentLocation({location: e ? e : ""})
     }
 
     return (
@@ -178,8 +184,9 @@ const SightingForm = () => {
                 <Heading level={3}>Report a shark sighting</Heading>
                 <TextField
                     label="Location"
-                    value={userCurrentLocation.latitude ? userCurrentLocation.latitude + " " + userCurrentLocation.longitude : "San Francisco"}
+                    value={userCurrentLocation.latitude ? userCurrentLocation.latitude + " " + userCurrentLocation.longitude : userCurrentLocation.location ? userCurrentLocation.location : "" }
                     isRequired
+                    onChange={(e) => handleManualChangeLocation(e)}
                 />
                 
 
