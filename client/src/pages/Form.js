@@ -224,7 +224,7 @@ const SightingForm = () => {
                 <Heading level={3}>Report a shark sighting</Heading>
                 <TextField
                     label="Location"
-                    value={userCurrentLocation.latitude ? userCurrentLocation.latitude + ", " + userCurrentLocation.longitude : userCurrentLocation.location ? userCurrentLocation.location : "" }
+                    value={userCurrentLocation.latitude ? userCurrentLocation.latitude + " " + userCurrentLocation.longitude : userCurrentLocation.location ? userCurrentLocation.location : "" }
                     isRequired
                     onChange={(e) => handleManualChangeLocation(e)}
                 />
