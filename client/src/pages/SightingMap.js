@@ -37,8 +37,9 @@ const SightingMap = () => {
             center={center}
             zoom={6}
           >
-            {sightingLocations ? sightingLocations.map(obj => {
+            {sightingLocations ? sightingLocations.map((obj, index) => {
                 return <Marker
+                key={index}
                 onLoad={onLoad}
                 position={{ 
                     lat: parseFloat(obj.location.split(" ")[0]), 

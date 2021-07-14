@@ -30,6 +30,7 @@ const LS = {
             }
         } else {
             // otherwise get the sightings from the server/DB
+            console.log("GRABBED FROM DB") 
             const newSightings = await API.getSightingData()
             LS.saveSightingData(newSightings)
             return newSightings
