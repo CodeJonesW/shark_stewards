@@ -9,6 +9,7 @@ router.post('/sightingReport', (req, res) => {
     timeOfSighting: req.body.timeOfSighting,
     email: req.body.email,
     subscribe: Boolean(req.body.subscribe),
+    description: req.body.description,
   })
   .then(newSightingReport => { 
     res.json(newSightingReport);

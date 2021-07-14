@@ -6,7 +6,7 @@ class SightingReport extends Model {}
 SightingReport.init(
   {
     sharkType: DataTypes.STRING,
-    submissionDate: DataTypes.DATE,
+    description: DataTypes.STRING,
     timeOfSighting: DataTypes.STRING,
     email: DataTypes.STRING,
     location: DataTypes.STRING,

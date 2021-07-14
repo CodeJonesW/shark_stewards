@@ -173,32 +173,36 @@ const SightingForm = () => {
     }
 
     function handleManualChangeLocation(e){
-        console.log(e)
+        // console.log(e)
         setUserCurrentLocation({location: e ? e : ""})
     }
 
     const handleSubmitReport = async (e) => {
         e.preventDefault()
-        console.log(e)
-        if(e.target.parentElement['8'].textContent === "Select an option…"){
+        // console.log(e)
+
+    // if form is updated make sure these are still valid >>
+    // could be refactored later with a useRef
+        if(e.target.parentElement['9'].textContent === "Select an option…"){
             alert("Please select a Shark Type")
             return
         } else if (e.target.parentElement['0'].value === ""){
             alert("Please select enter a location.")
             return
         }
-        // if form is updated make sure these are still valid >>
+
         let reportData = {
-            sharkType: e.target.parentElement['8'].outerText,
+            sharkType: e.target.parentElement['9'].outerText,
             location: e.target.parentElement['0'].value,
             timeOfSighting: e.target.parentElement['4'].value,
             email: e.target.parentElement['5'].value,
             subscribe: e.target.parentElement['11'].ariaChecked,
+            description: e.target.parentElement['6'].value
         }
         try {
             API.postSightingReport(reportData)
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 history.push(`/confirm`);
             })
         } catch (error) {
@@ -259,6 +263,13 @@ const SightingForm = () => {
                     inputMode="email"
                     optional
                     placeholder="Enter your email"
+                />
+                <TextField
+                    label="Description"
+                    type="description"
+                    inputMode="text"
+                    optional
+                    placeholder="Please provide a description"
                 />
                 <Divider size="M" />
                 <SharkPicker />
