@@ -12,8 +12,6 @@ const LS = {
         console.log(moment().format('hh:mm:ss a'))
         // if the sightings exist in local storage
         if(localStorage.getItem('sightings')){
-            // grab the day the data was last stored
-            const previousDay = localStorage.getItem('DayOfLastSightingsLoad')
             // grab the time the data was last stored
             const previousTime = localStorage.getItem('timeOfLastSightingsLoad')
             // if previous and current day are the same and if the current hour 
