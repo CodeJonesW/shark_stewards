@@ -41,12 +41,12 @@ const Welcome = () => {
                 flex="1 0 auto" 
                 gridArea="footer" 
             >
-                <ButtonGroup>
-                    <Link to="/">
-                        <Button variant="cta" margin="6%" height="60%" width="auto" >Learn about Local Sharks</Button>
+                <ButtonGroup id="welcomeButtonGroup">
+                    <Link to="/sightingMap">
+                        <Button variant="cta" margin="4%" height="60%" width="auto" >Sighting Map</Button>
                     </Link>
                     <Link to="/reportSighting">
-                        <Button margin="6%" height="60%" width="auto" variant="cta">Report a Shark Sighting</Button>
+                        <Button margin="4%" height="60%" width="auto" variant="cta">Report a Sighting</Button>
                     </Link>
                     
                 </ButtonGroup>

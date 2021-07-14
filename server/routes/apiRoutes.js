@@ -11,7 +11,7 @@ router.post('/sightingReport', (req, res) => {
     subscribe: Boolean(req.body.subscribe),
     description: req.body.description,
   })
-  .then(newSightingReport => { 
+  .then(newSightingReport => {
     res.json(newSightingReport);
    }).catch(err => {
     res.status(500).json(err);
