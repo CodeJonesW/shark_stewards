@@ -6,7 +6,7 @@ router.post('/sightingReport', (req, res) => {
   SightingReport.create({
     sharkType: req.body.sharkType,
     location: req.body.location,
-    time: req.body.time,
+    timeOfSighting: req.body.timeOfSighting,
     email: req.body.email,
     subscribe: Boolean(req.body.subscribe),
   })

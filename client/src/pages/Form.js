@@ -59,7 +59,7 @@ const SharkImage = (shark_id) => {
         // case "great_white":
         //     return <Image src="great_white" />;
         default:
-            return <Text>Not implemented yet!</Text>;
+            // return <Text>Not implemented yet!</Text>;
     }
 };
 
@@ -179,13 +179,21 @@ const SightingForm = () => {
 
     const handleSubmitReport = async (e) => {
         e.preventDefault()
+        console.log(e)
+        if(e.target.parentElement['8'].textContent === "Select an option…"){
+            alert("Please select a Shark Type")
+            return
+        } else if (e.target.parentElement['0'].value === ""){
+            alert("Please select enter a location.")
+            return
+        }
         // if form is updated make sure these are still valid >>
         let reportData = {
-            sharkType: e.target.parentElement['6'].outerText,
+            sharkType: e.target.parentElement['8'].outerText,
             location: e.target.parentElement['0'].value,
-            time: e.target.parentElement['2'].value,
-            email: e.target.parentElement['3'].value,
-            subscribe: e.target.parentElement['9'].ariaChecked,
+            timeOfSighting: e.target.parentElement['4'].value,
+            email: e.target.parentElement['5'].value,
+            subscribe: e.target.parentElement['11'].ariaChecked,
         }
         try {
             API.postSightingReport(reportData)
@@ -219,12 +227,38 @@ const SightingForm = () => {
                 
 
                 <Checkbox onChange={handleUseCurrentLocation}>Use Current Location</Checkbox>
-                <TextField label="Time of day (PST)" placeholder="9:00 AM" />
+                <Picker label="Time of Day (PST)">
+                    <Item key="3:00pm">3:00am</Item>
+                    <Item key="4:00pm">4:00pm</Item>
+                    <Item key="5:00am">5:00am</Item>
+                    <Item key="6:00am">6:00am</Item>
+                    <Item key="7:00am">7:00am</Item>
+                    <Item key="8:00am">8:00am</Item>
+                    <Item key="9:00am">9:00am</Item>
+                    <Item key="10:00am">10:00am</Item>
+                    <Item key="11:00am">11:00am</Item>
+                    <Item key="12:00pm">12:00pm</Item>
+                    <Item key="1:00pm">1:00pm</Item>
+                    <Item key="2:00pm">2:00pm</Item>
+                    <Item key="3:00pm">3:00pm</Item>
+                    <Item key="4:00pm">4:00pm</Item>
+                    <Item key="5:00pm">5:00am</Item>
+                    <Item key="6:00pm">6:00pm</Item>
+                    <Item key="7:00pm">7:00pm</Item>
+                    <Item key="8:00pm">8:00pm</Item>
+                    <Item key="9:00pm">9:00pm</Item>
+                    <Item key="10:00pm">10:00pm</Item>
+                    <Item key="11:00pm">11:00pm</Item>
+                    <Item key="12:00am">12:00am</Item>
+                    <Item key="1:00am">1:00am</Item>
+                    <Item key="2:00am">2:00am</Item>
+                </Picker>
                 <TextField
                     label="Email"
                     type="email"
                     inputMode="email"
                     optional
+                    placeholder="Enter your email"
                 />
                 <Divider size="M" />
                 <SharkPicker />

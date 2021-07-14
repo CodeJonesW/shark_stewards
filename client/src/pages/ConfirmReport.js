@@ -17,7 +17,7 @@ const ConfirmReport = () => {
     <Link to="/">
         <Button>Home</Button>
     </Link>
-       <Button>Edu</Button>
+        <Button>Edu</Button>
     </View>
     );
 };
