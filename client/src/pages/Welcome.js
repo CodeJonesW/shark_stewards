@@ -76,7 +76,7 @@ const Welcome = () => {
                                 Learn about Local Sharks
                             </Button>
                         </Link>
-                        <Link to="/sighting">
+                        <Link to="/reportSighting">
                             <Button
                                 margin="6%"
                                 height="60%"
