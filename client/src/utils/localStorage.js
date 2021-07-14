@@ -18,14 +18,21 @@ const LS = {
             const previousTime = localStorage.getItem('timeOfLastSightingsLoad')
             // if previous and current day are the same and if the current hour 
             // is still the same... grab stored sightings
-            if(parseInt(previousTime) === parseInt(moment().format('hh') && previousDay === moment().format('MMMM Do YYYY') ) ){          
+            if(parseInt(previousTime) === parseInt(moment().format('hh')) ){ 
+                console.log("GRABBED FROM LS")         
                 return JSON.parse(localStorage.getItem('sightings')) 
             } else {
+                console.log("GRABBED FROM DB") 
                 // otherwise get the sightings from the server/DB
                 const newSightings = await API.getSightingData()
                 LS.saveSightingData(newSightings)
                 return newSightings
             }
+        } else {
+            // otherwise get the sightings from the server/DB
+            const newSightings = await API.getSightingData()
+            LS.saveSightingData(newSightings)
+            return newSightings
         }
         
 

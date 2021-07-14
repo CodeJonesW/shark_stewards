@@ -18,7 +18,7 @@ import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
 import ChevronRight from "@spectrum-icons/workflow/ChevronRight";
 
 import { useHistory } from 'react-router-dom'
-import API from "../utils/api/api.js"
+import API from "../utils/api.js"
 import React, {useEffect, useState} from "react";
 
 const sharks = [
@@ -194,11 +194,12 @@ const SightingForm = () => {
         let reportData = {
             sharkType: e.target.parentElement['9'].outerText,
             location: e.target.parentElement['0'].value,
-            timeOfSighting: e.target.parentElement['4'].value,
+            timeOfSighting: e.target.parentElement['4'].outerText,
             email: e.target.parentElement['5'].value,
-            subscribe: e.target.parentElement['11'].ariaChecked,
+            subscribe: e.target.parentElement['12'].ariaChecked,
             description: e.target.parentElement['6'].value
         }
+        console.log(reportData)
         try {
             API.postSightingReport(reportData)
             .then(data => {
