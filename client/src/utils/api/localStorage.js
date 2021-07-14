@@ -4,18 +4,22 @@ import API from "./api"
 const LS = {
     saveSightingData: (data) => {
         localStorage.setItem('sightings', JSON.stringify(data))
-        localStorage.setItem('timeOfLastSightingsLoad', moment().format('MMMM Do YYYY'))
+        localStorage.setItem('DayOfLastSightingsLoad', moment().format('MMMM Do YYYY'))
+        localStorage.setItem('timeOfLastSightingsLoad', moment().format('hh'))
     },
 
     checkSightingData: async (data) => {
+        console.log(moment().format('hh:mm:ss a'))
         // if the sightings exist in local storage
         if(localStorage.getItem('sightings')){
-            // grab the time the were last stored
+            // grab the day the data was last stored
+            const previousDay = localStorage.getItem('DayOfLastSightingsLoad')
+            // grab the time the data was last stored
             const previousTime = localStorage.getItem('timeOfLastSightingsLoad')
-            // if previous and current time are the same then return parsed sightings
-            // this could be upgraded to check if its been 30 min instead of day
-            if( previousTime === moment().format('MMMM Do YYYY') ){
-                return JSON.parse(localStorage.getItem('sightings'))
+            // if previous and current day are the same and if the current hour 
+            // is still the same... grab stored sightings
+            if(parseInt(previousTime) === parseInt(moment().format('hh') && previousDay === moment().format('MMMM Do YYYY') ) ){          
+                return JSON.parse(localStorage.getItem('sightings')) 
             } else {
                 // otherwise get the sightings from the server/DB
                 const newSightings = await API.getSightingData()
