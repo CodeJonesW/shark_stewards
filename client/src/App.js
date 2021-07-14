@@ -9,8 +9,8 @@ import { Flex, View } from "@adobe/react-spectrum";
 function App() {
     return (
         <Flex direction="column">
-            <Navbar />
             <Router>
+                <Navbar />
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/sighting" component={Form} />
