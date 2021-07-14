@@ -228,8 +228,8 @@ const SightingForm = () => {
 
                 <Checkbox onChange={handleUseCurrentLocation}>Use Current Location</Checkbox>
                 <Picker label="Time of Day (PST)">
-                    <Item key="3:00pm">3:00am</Item>
-                    <Item key="4:00pm">4:00pm</Item>
+                    <Item key="3:00am">3:00am</Item>
+                    <Item key="4:00am">4:00pm</Item>
                     <Item key="5:00am">5:00am</Item>
                     <Item key="6:00am">6:00am</Item>
                     <Item key="7:00am">7:00am</Item>
