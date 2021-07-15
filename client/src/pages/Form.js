@@ -224,7 +224,7 @@ const SightingForm = () => {
          <Form maxWidth="size-3600">
                 <Heading level={3}>Report a shark sighting</Heading>
                 <TextField
-                    label="Location"
+                    label="Location Coordinates"
                     value={userCurrentLocation.latitude ? userCurrentLocation.latitude + " " + userCurrentLocation.longitude : userCurrentLocation.location ? userCurrentLocation.location : "" }
                     isRequired
                     onChange={(e) => handleManualChangeLocation(e)}
