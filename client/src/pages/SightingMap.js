@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { Flex, View, Heading, ButtonGroup, Button, Image, Grid } from "@adobe/react-spectrum";
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import LS from "../utils/localStorage"
 
 const containerStyle = {
@@ -41,6 +41,7 @@ const SightingMap = () => {
                 return <Marker
                 key={index}
                 onLoad={onLoad}
+                cursor="Shark sighting on "
                 position={{ 
                     lat: parseFloat(obj.location.split(" ")[0]), 
                     lng: parseFloat(obj.location.split(" ")[1])

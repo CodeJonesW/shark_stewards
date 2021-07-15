@@ -7,6 +7,7 @@ const Footer = () => {
   return(
     <div id="footerContainer">
         <img id="footerLogo" src={logo} alt="sharkStewardLogo"></img>
+        <span id="footerSpan">Concept by Students of</span>
         <img id="footerLogo2" src={logo2} alt="sharkStewardLogo"></img>
     </div>
   )

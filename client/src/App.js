@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./pages/Form";
 import Welcome from "./pages/Welcome.js";
 import SightingMap from "./pages/SightingMap";
+import Educate from "./pages/Educate.js"
 import ConfirmReport from "./pages/ConfirmReport"
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
@@ -18,6 +19,7 @@ function App() {
                         <Route exact path="/reportSighting" component={Form} />
                         <Route exact path="/confirm" component={ConfirmReport} />
                         <Route exact path="/sightingMap" component={SightingMap} />
+                        <Route exact path="/educate" component={Educate} />
                         <Route
                             render={() => (
                                 <h1 className="display-2">

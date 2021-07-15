@@ -34,20 +34,24 @@ const Welcome = () => {
                 
             </View>
             <View
-                paddingBottom="size-400"
+                paddingBottom="size-100"
                 paddingTop="size-400"
-                paddingStart="size-300"
-                paddingEnd="size-300"
+                paddingStart="size-10"
+                paddingEnd="size-10"
                 flex="1 0 auto" 
                 gridArea="footer" 
             >
-                <ButtonGroup id="welcomeButtonGroup">
+                <ButtonGroup layout="flexGrow" id="welcomeButtonGroup">
                     <Link to="/sightingMap">
-                        <Button variant="cta" margin="4%" height="60%" width="auto" >Sighting Map</Button>
+                        <Button variant="cta"  height="70px" width="120px">Sighting Map</Button>
+                    </Link>
+                    <Link to="/educate">
+                        <Button marginStart="4px" marginEnd="4px" height="70px" width="120px" variant="cta">Education</Button>
                     </Link>
                     <Link to="/reportSighting">
-                        <Button margin="4%" height="60%" width="auto" variant="cta">Report a Sighting</Button>
+                        <Button  height="70px" width="120px" variant="cta">Report a Sighting</Button>
                     </Link>
+                    
                     
                 </ButtonGroup>
     

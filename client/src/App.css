@@ -28,12 +28,14 @@
     max-width: 144px;
     height: auto;
     max-height: 60px;
+    margin-left: 2%;
+    margin-right: 54%;
 }
 
 #footerLogo2 {
     width: 40%;
     height: auto;
-    margin-left: 20%;
+    margin-left: 1%;
     max-height: 60px;
     max-width: 144px;
 }
@@ -69,4 +71,8 @@
     #footerContainer {
         margin-top: 10%;
     }
+    #footerSpan {
+        font-size: smaller;
+    }
+    
   }
