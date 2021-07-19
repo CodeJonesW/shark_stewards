@@ -28,7 +28,7 @@ const SightingForm = () => {
         >
             <Flex direction="row" flex>
                 <View flex />
-                <Form maxWidth="size-3600" isRequired necessityIndicator="label">
+                <Form maxWidth="size-4800" isRequired necessityIndicator="label">
                     <Heading level={3}>Report a shark sighting</Heading>
 
                     <TextField

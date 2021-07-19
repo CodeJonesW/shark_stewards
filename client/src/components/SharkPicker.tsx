@@ -1,4 +1,4 @@
-import { Text, ActionButton, Picker, Item } from "@adobe/react-spectrum";
+import { Text, ActionButton, Picker, Item, Content, Flex, View, Well } from "@adobe/react-spectrum";
 import great_white from "../assets/images/sharks/great_white.jpg";
 import hammerhead from "../assets/images/sharks/hammerhead.jpeg";
 import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
@@ -55,44 +55,35 @@ export const sharks: Shark[] = [
 
 export const SharkImageCarousel = (shark_id: Shark, left: (() => void) | null, right: (() => void) | null) => {
     return (
-        <div style={{ overflow: "hidden", position: "relative" }}>
+        <Flex direction="column">
 
             <img
                 src={shark_id.src}
                 alt={shark_id.alt}
-                height="100%"
+                height="auto"
                 width="100%"
             />
-            <ActionButton
-                UNSAFE_style={{
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
-                    margin: "auto 0",
-                }}
-                // isQuiet
-                isDisabled={left == null}
-                onPress={left!}
-            >
-                <ChevronLeft />
-            </ActionButton>
-            <ActionButton
-                UNSAFE_style={{
-                    position: "absolute",
-                    right: 0,
-                    top: 0,
-                    bottom: 0,
-                    margin: "auto 0",
-                }}
-                // isQuiet
-                isDisabled={right == null}
-                onPress={right!}
-            >
-                <ChevronRight />
-            </ActionButton>
+            <Well>{shark_id.desc}</Well>
+            <Flex direction="row">
+                <ActionButton
+                    isQuiet
+                    isDisabled={left == null}
+                    onPress={left!}
+                >
+                    <ChevronLeft />
+                </ActionButton>
+                <View flex />
+                <ActionButton
+                    isQuiet
+                    isDisabled={right == null}
+                    onPress={right!}
+                >
 
-        </div>
+                    <ChevronRight />
+                </ActionButton>
+            </Flex>
+
+        </Flex>
     );
 };
 
