@@ -63,5 +63,10 @@
         border-radius: 50%;
         max-width: 100%;
     }
-
+    #welcomeButtonGroup {
+        margin-bottom: 40%;
+    }
+    #footerContainer {
+        margin-top: 10%;
+    }
   }
