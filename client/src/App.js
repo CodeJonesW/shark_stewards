@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Form from "./pages/Form";
-import Welcome from "./pages/Welcome.js";
+import Welcome from "./pages/Welcome.tsx";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
 import { Flex, View } from "@adobe/react-spectrum";
