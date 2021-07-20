@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider, defaultTheme } from "@adobe/react-spectrum";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
     <React.StrictMode>

@@ -1,4 +1,4 @@
-import { Text, ActionButton, Picker, Item, Content, Flex, View, Well } from "@adobe/react-spectrum";
+import { Text, ActionButton, Picker, Item, Content, Flex, View, Well, Image } from "@adobe/react-spectrum";
 import great_white from "../assets/images/sharks/great_white.jpg";
 import hammerhead from "../assets/images/sharks/hammerhead.jpeg";
 import ChevronLeft from "@spectrum-icons/workflow/ChevronLeft";
@@ -6,7 +6,7 @@ import ChevronRight from "@spectrum-icons/workflow/ChevronRight";
 import React from "react";
 import { useMemo } from "react";
 
-interface Shark {
+export interface Shark {
     key: string,
     alt: string,
     src: string,
@@ -55,9 +55,9 @@ export const sharks: Shark[] = [
 
 export const SharkImageCarousel = (shark_id: Shark, left: (() => void) | null, right: (() => void) | null) => {
     return (
-        <Flex direction="column">
+        <>
 
-            <img
+            <Image
                 src={shark_id.src}
                 alt={shark_id.alt}
                 height="auto"
@@ -83,12 +83,17 @@ export const SharkImageCarousel = (shark_id: Shark, left: (() => void) | null, r
                 </ActionButton>
             </Flex>
 
-        </Flex>
+        </>
     );
 };
 
-export const SharkPicker = () => {
-    let [shark_index, set_shark_index] = React.useState<number | undefined>();
+interface SharkPickerProps {
+    shark_index: number | undefined,
+    set_shark_index: (a: number | undefined) => void,
+}
+
+export const SharkPicker: React.FC<SharkPickerProps> = ({ shark_index, set_shark_index }) => {
+    // let [shark_index, set_shark_index] = React.useState<number | undefined>();
     const left =
         (shark_index === 0 || shark_index === undefined) ? null : () => set_shark_index(shark_index! - 1);
     const right =
