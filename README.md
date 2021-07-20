@@ -25,10 +25,10 @@ This project is licensed under the MIT license.
   
 ## Contributing
 
-moonrise-tk Tanishq Kancharla
-
+[moonrise-tk](https://github.com/moonrise-tk/). Tanishq Kancharla
+[codejonesw](https://github.com/codejonesw/). William Jones
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact me directly at williamjonescodes@gmail.com. You can find more of my work at [codejonesw](https://github.com/codejonesw/).
+If you have any questions about the repo, open an issue or contact me directly at williamjonescodes@gmail.com.
 
