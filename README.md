@@ -25,8 +25,8 @@ This project is licensed under the MIT license.
   
 ## Contributing
 
-[moonrise-tk](https://github.com/moonrise-tk/). Tanishq Kancharla
-[codejonesw](https://github.com/codejonesw/). William Jones
+[moonrise-tk](https://github.com/moonrise-tk/). Tanishq Kancharla.  
+[codejonesw](https://github.com/codejonesw/). William Jones.  
 
 ## Questions
 
