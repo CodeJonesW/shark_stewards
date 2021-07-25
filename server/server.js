@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors')
-const sequelize = require("./config/config");
 const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
@@ -14,6 +13,5 @@ app.use(express.static('public'));
 app.use('/api', apiRoutes);
 
 app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}!`);
-    sequelize.sync({ force: false });
-  });
+  console.log(`App listening on port ${PORT}!`);
+});
