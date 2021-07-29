@@ -3,7 +3,6 @@ const { SightingReport } = require("../models/index");
 const sequelize = require("../config/config")
 
 router.post('/sightingReport', (req, res) => {
-  console.log(req.body.sharkType)
   SightingReport.create({
     sharkType: req.body.sharkType.key,
     location: req.body.location,
