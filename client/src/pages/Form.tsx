@@ -126,7 +126,7 @@ const SightingForm = () => {
         try {
             API.postSightingReport(reportData)
                 .then(data => {
-                    // console.log(data)
+                    console.log(data)
                     history.push(`/confirm`);
                 })
         } catch (error) {
