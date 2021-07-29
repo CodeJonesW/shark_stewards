@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Flex, View, Heading, ButtonGroup, Button, Image, Grid } from "@adobe/react-spectrum";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import LS from "../utils/localStorage"
+import API from "../utils/api";
 
 const containerStyle = {
   width: '400px',
@@ -23,7 +23,7 @@ const SightingMap = () => {
 
   useEffect(() => {
     async function getData() {
-      const sightingData = await LS.checkSightingData()
+      const sightingData = await API.getSightingData()
       setSightingLocations(sightingData)
     }
     getData()
