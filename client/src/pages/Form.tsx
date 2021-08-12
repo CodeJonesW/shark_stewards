@@ -61,7 +61,6 @@ const SightingForm = () => {
         description: undefined,
     });
     const [useCurrentLocation, setUseCurrentLocation] = React.useState<boolean | null>(false);
-    console.log(formData.timeOfSighting);
 
     const onCurrentLocationChange = (selected: boolean) => {
         // if the checkbox has already been checked clear input
@@ -104,7 +103,6 @@ const SightingForm = () => {
 
     const handleSubmitReport = async (e: React.FormEvent<Element>) => {
         e.preventDefault()
-        console.log(e)
         // if form is updated make sure these are still valid >>
         // could be refactored later with a useRef
         if (formData.sharkType === undefined) {
@@ -122,7 +120,6 @@ const SightingForm = () => {
             subscribe: formData.subscribe,
             description: formData.description
         }
-        console.log(reportData)
         try {
             API.postSightingReport(reportData)
                 .then(data => {

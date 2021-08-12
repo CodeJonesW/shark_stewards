@@ -56,6 +56,14 @@ router.post('/sightingReport', async (req, res) => {
                 },
               },
             ],
+          },
+          'Email': {
+            type: 'email',
+            email: req.body.email
+          },
+          'Subscribe': {
+            type: 'checkbox',
+            checkbox: req.body.subscribe
           }
         }
       },
